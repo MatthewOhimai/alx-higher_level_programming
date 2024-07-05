@@ -22,4 +22,4 @@ def find_peak(list_of_integers):
     elif peak < mylist[mid - 1]:
         return find_peak(mylist[:mid])
     else:
-        return find_peak(mylist[:mid + 1])
+        return find_peak(mylist[mid + 1:])
