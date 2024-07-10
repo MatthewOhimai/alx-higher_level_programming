@@ -1,16 +1,11 @@
 #!/usr/bin/python3
-"""
-Fetches https://alx-intranet.hbtn.io/status and displays the body of the response.
-"""
-
+"""Fetches https://alx-intranet.hbtn.io/status using urllib"""
 import urllib.request
 
 if __name__ == "__main__":
-	url = 'https://alx-intranet.hbtn.io/status'
-	with urllib.request.urlopen(url) as response:
-		content = response.read()
+	with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as response:
+		html = response.read()
 		print("Body response:")
-		print("\t- type: {}".format(type(content)))
-		print("\t- content: {}".format(content))
-		print("\t- utf8 content: {}".format(content.decode('utf-8')))
-
+		print("\t- type: {}".format(type(html)))
+		print("\t- content: {}".format(html))
+		print("\t- utf8 content: {}".format(html.decode("utf-8")))
